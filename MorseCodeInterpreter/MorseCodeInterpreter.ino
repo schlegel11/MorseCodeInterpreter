@@ -75,13 +75,14 @@ int column = 0;
 
 // Init lcd.
 void lcdInit() {
+
     lcd.init(); //initialize the lcd
     lcd.backlight(); //open the backlight
 }
 
 // Write method for lcd display.
 void lcdWrite(char *message, int row, int column, int delayTime) {
-     Serial.print(column);
+
     lcd.setCursor(column, row);
     lcd.print(message);
     delay(delayTime);
@@ -110,7 +111,7 @@ void lcdClear() {
 }
 
 void setup() {
-    Serial.begin(9600);
+
     calibrateSensor();
     treeCopy = &tree;
     pinMode(BUTTON_PIN, INPUT);
